@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h2>Wishlist de viajes</h2>
+
+  <form class="mb-4">
+    <div class="mb-2">
+      <label class="form-label">Nombre</label>
+      <input class="form-control" name="nombre" #nombre placeholder="Ingresar nombre...">
+    </div>
+    <div class="mb-2">
+      <label class="form-label">Imagen URL</label>
+      <input class="form-control" name="url" #url placeholder="Ingresar url...">
+    </div>
+    <button type="submit" class="btn btn-primary"
+            (click)="guardar(nombre.value, url.value)">Guardar</button>
+  </form>
+
+  <ul class="list-unstyled row">
+    <li *ngFor="let d of destinos">
+      <app-destino-viaje [destino]="d"></app-destino-viaje>
+    </li>
+  </ul>
+</div>
